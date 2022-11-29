@@ -11,35 +11,10 @@ datasource db {
 }
 
 model User {
-  id          String    @id @default(uuid())
-  name        String?   @db.VarChar(20)
+  id          String  @id @default(uuid())
+  name        String? @db.VarChar(20)
   familyName  String?
   password    String
-  email       String?   @unique
-  phoneNumber String?   @unique
-  shop        Shop[]
-  products    Product[]
-}
-
-model Shop {
-  id        String    @id @default(uuid())
-  name      String    @db.VarChar(20)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  ownerId   String
-  owner     User      @relation(fields: [ownerId], references: [id])
-  products  Product[]
-}
-
-model Product {
-  id        String   @id @default(uuid())
-  content   String
-  title     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  published Boolean  @default(false)
-  shop      Shop     @relation(fields: [shopId], references: [id])
-  shopId    String
-  owner     User     @relation(fields: [ownerId], references: [id])
-  ownerId   String   
+  email       String? @unique
+  phoneNumber String? @unique
 }

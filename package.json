@@ -19,7 +19,7 @@
     "validator": "^13.7.0"
   },
   "types": "./index.d.ts",
-  "name": "graphql2",
+  "name": "zipway-backend",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
@@ -30,7 +30,7 @@
     "dev": "nodemon src/index.ts",
     "prisma": "prisma format && prisma db push"
   },
-  "author": "",
+  "author": "AmirAbbas Rezaei",
   "license": "ISC",
   "description": ""
 }
